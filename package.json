@@ -1,0 +1,25 @@
+{
+  "name": "react-site-tutorial",
+  "version": "1.0.0",
+  "description": "The main react site tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnglishAdam/react-site-tutorial.git"
+  },
+  "keywords": [
+    "react",
+    "tutorial",
+    "adam",
+    "english"
+  ],
+  "author": "Adam English",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EnglishAdam/react-site-tutorial/issues"
+  },
+  "homepage": "https://github.com/EnglishAdam/react-site-tutorial#readme"
+}
