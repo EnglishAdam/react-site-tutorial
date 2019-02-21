@@ -2,35 +2,58 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 
-class Square extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      value: null
-    }
-  }
+// When components only use a render function, you can use a function rather than extend React.Compnent
+// class Square extends React.Component {
+function Square(props) {
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     value: null
+  //   }
+  // }
 
   // setState({value}) {
   //   console.log(value)
   //   this.state = value
   // }
 
-  render() {
+  // Function components don't need the render method
+  // render() {
     return (
       <button
         className="square"
-        onClick={() => this.setState({value: 'X'}) }
+        onClick={props.onClick} // For functional components, props via argument not this
+        // onClick={() => this.props.onClick()}
+        // onClick={() => this.setState({value: 'X'}) }
       >
-        {this.state.value}
-        {/* {this.props.value} */}
+        {/* {this.state.value} */}
+        {this.props.value}
       </button>
     );
-  }
+  // }
 }
 
 class Board extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      squares: Array(9).fill(null)
+    }
+  }
+
+  handleClick(i) {
+    const squares = this.state.squares.slice(); // Copy array
+    squares[i] = 'X'; // Set squares
+    this.setState({squares})
+  }
+
   renderSquare(i) {
-    return <Square value={i}/>;
+    return (
+      <Square
+        value={this.state.squares[i]}
+        onClick={() => this.handleClick(i)}
+      />
+    );
   }
 
   render() {
