@@ -172,6 +172,12 @@ class Game extends React.Component {
 
 export default Game;
 
+/**
+ * Calculates the winner based upon the squares passed to it
+ * 
+ * @param {array} squares 
+ * @returns {array}
+ */
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
